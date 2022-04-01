@@ -41,6 +41,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+body{ 
+  position: relative;
+}
 
 :root {
   --green-1:  rgba(155, 224, 176, 1);
@@ -57,4 +60,5 @@ table {
 }
 
 @import "./styles/general.scss"; 
+@import "./styles/sidebar.scss"; 
 

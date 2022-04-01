@@ -1,0 +1,26 @@
+#sidebar{
+  width: 20%; 
+  height: 100%;
+  background-color: var(--green-5);
+  position: fixed; 
+  font-size: 2em;
+  font-weight: 200;  
+  text-align: center;
+  color: var(--white-1);
+
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+}
+
+#sidebar > ul{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-around;
+  height: 70%; 
+}
+
+
+
+

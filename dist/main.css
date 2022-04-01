@@ -51,6 +51,10 @@ table {
   border-spacing: 0;
 }
 
+body {
+  position: relative;
+}
+
 :root {
   --green-1: rgba(155, 224, 176, 1);
   --green-2: rgba(22, 219, 81, 1);
@@ -64,9 +68,38 @@ table {
   --black-1: rgba(13,13,13, 1);
 }
 
+#main {
+  display: flex;
+  width: 80%;
+  float: right;
+}
+
 h1 {
   font-size: 5em;
   font-family: "Kanit", sans-serif;
   padding: 20px;
   color: var(--green-3);
+  text-align: center;
+}
+
+#sidebar {
+  width: 20%;
+  height: 100%;
+  background-color: var(--green-5);
+  position: fixed;
+  font-size: 2em;
+  font-weight: 200;
+  text-align: center;
+  color: var(--white-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
 }
