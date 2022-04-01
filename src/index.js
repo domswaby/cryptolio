@@ -2,7 +2,8 @@
   // The anonymous function **is not** called right at this point.
   document.addEventListener("DOMContentLoaded", () => {
 
-    let wrapper  = document.getElementById("main"); 
-    wrapper.innerHTML = "<p>Tester</p>"; 
+    // let wrapper  = document.getElementById("main"); 
+    // wrapper.innerHTML = "<p>Tester</p>"; 
   
-  })
+
+  }); 
