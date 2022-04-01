@@ -66,5 +66,7 @@ table {
 
 h1 {
   font-size: 5em;
+  font-family: "Kanit", sans-serif;
+  padding: 20px;
   color: var(--green-3);
 }
