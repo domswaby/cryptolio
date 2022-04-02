@@ -109,5 +109,12 @@ content {
 }
 
 #search-wrap {
-  margin: 20px 0;
+  padding: 10px;
+  border: 2px solid var(--gray-1);
+}
+
+#search-results {
+  padding: 10px;
+  margin: 0 0 0 10px;
+  list-style-type: number;
 }

@@ -8,19 +8,30 @@ document.addEventListener("DOMContentLoaded", () => {
     let dataGrabber = new dataUtils(); 
     let coinsList = localStorage.getItem('coinsList');   
 
+    const displaySearchResults = function (results) {
+      let resultList = document.querySelector("#search-results");
+      results.forEach(function (result) {
+        let child = document.createElement('li')
+        child.innerHTML = result.name;
+        resultList.appendChild(child);
+      })
+    }
+
     if(!coinsList){
       dataGrabber.coinsList().then((data) => {
         coinsList = data;
         localStorage.setItem('coinsList', JSON.stringify(data));
         console.log("Got coinsList from API")
-        console.log(coinsList[4].name);
+        displaySearchResults(coinsList.slice(0,10))  
       });  
     }else{
       coinsList = JSON.parse(localStorage.getItem('coinsList')); 
       console.log("Got coinsList from localStorage")
-      console.log(coinsList[4].name); 
+      displaySearchResults(coinsList.slice(0, 10))
     }
     
+
+  
   
     // let simplePrice; 
     
