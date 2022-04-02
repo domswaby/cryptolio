@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       filterSearchResults();
-      console.log("heard it"); 
     }); 
     
     const filterSearchResults = () => {
@@ -63,10 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       let value = searchInput.value.toLowerCase(); 
    
       for(let item of coinsList){
-        if(results.length > 50) break;
+        if(results.length > 49) break;
         if(item.symbol.toLowerCase().includes(value.toLowerCase()) || item.name.toLowerCase().includes(value.toLowerCase())){
           results.push(item);
-          console.log(item);
         }
       }
 
