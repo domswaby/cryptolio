@@ -77,9 +77,13 @@ body {
 h1 {
   font-size: 5em;
   font-family: "Kanit", sans-serif;
-  padding: 20px;
+  margin: 20px 0;
   color: var(--green-3);
   text-align: center;
+}
+
+content {
+  padding-left: 20px;
 }
 
 #sidebar {
@@ -102,4 +106,8 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   height: 70%;
+}
+
+#search-wrap {
+  margin: 20px 0;
 }

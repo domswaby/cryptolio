@@ -3,16 +3,16 @@ console.log("hello I'm dataUtil");
 let root_url = "https://api.coingecko.com/api/v3"; 
 let simple_price_endpoint = root_url + "/simple/price?ids=bitcoin&vs_currencies=usd"; 
 let coin_endpoint = root_url + "/coins/bitcoin"; 
+let coins_list_endpoint = root_url + "/coins/list"; 
 let my_data; 
 
 class DataUtil { 
 
   constructor() { 
-    // this.ele = document.querySelector("#test-display");
+    this.ele = document.querySelector("#test-display");
   }
   coinsList(){
 
-    let coins_list_endpoint = root_url + "/coins/list"; 
     return fetch(coins_list_endpoint)
       .then(response => response.json())
       .then(data => {
