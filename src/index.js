@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // const dataUtils = require("./scripts/dataUtil.js"); 
     let dataGrabber = new dataUtils(); 
     let coinsList = localStorage.getItem('coinsList');   
+    let resultList = document.querySelector("#search-results");
 
     const displaySearchResults = function (results) {
-      let resultList = document.querySelector("#search-results");
       resultList.innerHTML = ''; 
       results.forEach(function (result) {
         let child = document.createElement('li')
@@ -35,7 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let searchInput = document.querySelector("#search-input");
     let searchButton = document.querySelector("#search-wrap > button")
-    searchInput.addEventListener("keyup", function () {
+    searchInput.addEventListener("keyup", function (e) {
+      if(e.target.value === ''){
+       resultList.innerHTML = ''; 
+       return;
+      }
+      
       filterSearchResults();
       console.log("heard it"); 
     }); 
