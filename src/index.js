@@ -1,4 +1,5 @@
 import dataUtils from './scripts/dataUtil.js';
+import Portfolio from './scripts/portfolio.js';
 // import searchUtils from './scripts/search.js';
 
 
@@ -7,6 +8,9 @@ import dataUtils from './scripts/dataUtil.js';
 document.addEventListener("DOMContentLoaded", () => {
   // const dataUtils = require("./scripts/dataUtil.js"); 
     let dataGrabber = new dataUtils(); 
+    let myPortfolio = new Portfolio();
+    console.log(myPortfolio.portfolio);
+
     let coinsList = localStorage.getItem('coinsList');   
     let resultList = document.querySelector("#search-results");
 
@@ -16,6 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
         let child = document.createElement('li')
         child.innerHTML = result.name;
         resultList.appendChild(child);
+
+        let button = document.createElement('button')
+        button.innerHTML = "add coin"
+        child.appendChild(button);
+
+        button.addEventListener("click", (e) => {
+            myPortfolio.addCoin(result);
+            console.log(myPortfolio.portfolio); 
+        });
       })
     }
     
