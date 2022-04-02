@@ -1,4 +1,5 @@
 import dataUtils from './scripts/dataUtil.js';
+// import searchUtils from './scripts/search.js';
 
 
 // the event listener's callback will be called AFTER the DOM is fully loaded.
@@ -10,13 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const displaySearchResults = function (results) {
       let resultList = document.querySelector("#search-results");
+      resultList.innerHTML = ''; 
       results.forEach(function (result) {
         let child = document.createElement('li')
         child.innerHTML = result.name;
         resultList.appendChild(child);
       })
     }
-
+    
     if(!coinsList){
       dataGrabber.coinsList().then((data) => {
         coinsList = data;
@@ -31,20 +33,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
 
-  
-  
-    // let simplePrice; 
+    let searchInput = document.querySelector("#search-input");
+    let searchButton = document.querySelector("#search-wrap > button")
+    searchInput.addEventListener("keyup", function () {
+      filterSearchResults();
+      console.log("heard it"); 
+    }); 
     
-    // dataGrabber.simplePrice().then((data) => {
-    //   simplePrice = data; 
-    //   console.log(simplePrice);
-    // });
-    
-    
+    const filterSearchResults = () => {
+      let results = []
+      let value = searchInput.value.toLowerCase(); 
+   
+      for(let item of coinsList){
+        if(results.length > 50) break;
+        if(item.symbol.toLowerCase().includes(value.toLowerCase()) || item.name.toLowerCase().includes(value.toLowerCase())){
+          results.push(item);
+          console.log(item);
+        }
+      }
 
-    // let wrapper  = document.getElementById("main"); 
-    // wrapper.innerHTML = "<p>Tester</p>"; 
-    
+      displaySearchResults(results);
+    }
 
   }); 
 
