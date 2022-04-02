@@ -1,0 +1,21 @@
+#header{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+   flex: 1;
+}
+
+#header > div{
+    flex: 5;
+    text-align: right;
+ 
+}
+
+#header > h1{
+}
+
+#cyberfrog{
+    width: 120px; 
+    height: 120px;
+    border-radius: 100%;
+}

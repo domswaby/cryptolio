@@ -1,7 +1,10 @@
 #main{
-    display: flex; 
+    display: flex;
+    flex-direction: column;
     width: 80%; 
     float: right;
+  
+  
 }
 
 h1 { 
@@ -13,6 +16,7 @@ h1 {
 }
 
 content{
-  padding-left: 20px; 
+ 
+  padding: 20px;
 }
 
