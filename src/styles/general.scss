@@ -3,8 +3,7 @@
     flex-direction: column;
     width: 80%; 
     float: right;
-  
-  
+    min-height: 100vh;
 }
 
 h1 { 
@@ -18,5 +17,21 @@ h1 {
 content{
  
   padding: 20px;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+footer{
+  height: 5em; 
+  width: 100%; 
+  color: var(--gray-1); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  background-color: var(--black-1);
+  width: 80%; 
+  float: right; 
 }
 
