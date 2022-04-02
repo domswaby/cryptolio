@@ -16,8 +16,14 @@ class Portfolio{
     }
 
     addCoin(coin) {
-        this.portfolio.push(coin);
-        localStorage.setItem("portfolio", JSON.stringify(this.portfolio))
+        let alreadyAdded = this.portfolio.some((ele) => ele.id === coin.id)
+        
+        if(!alreadyAdded){
+           this.portfolio.push(coin);
+           localStorage.setItem("portfolio", JSON.stringify(this.portfolio))
+        }else{
+            alert(`You've already added ${coin.name}`)
+        }
     }
 
 }
