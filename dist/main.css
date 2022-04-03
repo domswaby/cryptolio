@@ -214,3 +214,9 @@ footer {
 #port-list > li button {
   cursor: pointer;
 }
+
+.bar:hover {
+  fill: var(--green-2);
+  opacity: 0.9;
+  cursor: pointer;
+}

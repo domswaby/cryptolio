@@ -43,7 +43,21 @@ class barChart{
                 .attr('y', (d) => y(d.score))
                 .attr('height', d => y(0) - y(d.score))
                 .attr('width', x.bandwidth())
-        
+                .attr('class', 'bar')
+
+        function xAxis(g){
+            g.attr('transform', `translate(0, ${height - margin.bottom})`)
+                .call(d3.axisBottom(x).tickFormat(i => testData[i].name))
+                .attr('font-size', '1.2em')
+        }
+
+        function yAxis(g){
+            g.attr('transform', `translate(${margin.left}, 0)`)
+                .call(d3.axisLeft(y).ticks(null, testData.format))
+                .attr('font-size', '1.2em')
+        }    
+        svg.append('g').call(xAxis);
+        svg.append('g').call(yAxis);
         svg.node()
     }
 
