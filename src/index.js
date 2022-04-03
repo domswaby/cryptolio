@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
       resultList.innerHTML = ''; 
       results.forEach(function (result) {
         let child = document.createElement('li')
-        resultList.appendChild(child);
-
         let button = document.createElement('button')
         let span = document.createElement('span')
+                
+        resultList.appendChild(child);
         span.innerHTML = result.name
         button.innerHTML = "add coin"
         child.appendChild(span);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         button.addEventListener("click", (e) => {
             myPortfolio.addCoin(result);
-            console.log(myPortfolio.portfolio); 
+            // console.log(myPortfolio.portfolio); 
         });
       })
     }

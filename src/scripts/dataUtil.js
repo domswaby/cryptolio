@@ -1,8 +1,10 @@
 console.log("hello I'm dataUtil"); 
 
 let root_url = "https://api.coingecko.com/api/v3"; 
-let simple_price_endpoint = root_url + "/simple/price?ids=bitcoin&vs_currencies=usd"; 
-let coin_endpoint = root_url + "/coins/bitcoin"; 
+// let simple_price_endpoint = root_url + "/simple/price?ids=bitcoin&vs_currencies=usd"; 
+let simple_price_endpoint = root_url + "/simple/price?"; 
+// let coin_endpoint = root_url + "/coins/bitcoin"; 
+let coin_info_endpoint = root_url + "/coins"; 
 let coins_list_endpoint = root_url + "/coins/list"; 
 let my_data; 
 
@@ -24,6 +26,7 @@ class DataUtil {
   }
 
   simplePrice(){
+    //let endpoint = `${simple_price_endpoint}ids=${coin.id}&vs_currencies=usd`
     return fetch(simple_price_endpoint)
       .then(response => response.json())
       .then(data => {
@@ -32,12 +35,14 @@ class DataUtil {
       });
   }
 
-  coinInfo(){
-    return fetch(coin_endpoint)
+  coinInfo(coin){
+    let endpoint = `${coin_info_endpoint}/${coin.id}`
+    return fetch(endpoint)
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      ele.innerHTML = `The bitcoin symbol is: <img src='${data.image.thumb}' />`;
+      return data;
+      // ele.innerHTML = `The bitcoin symbol is: <img src='${data.image.thumb}' />`;
     });
   }
 

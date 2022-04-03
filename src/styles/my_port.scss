@@ -1,0 +1,23 @@
+#port-wrap{
+    background-color: var(--gray-3);
+    color: var(--white-1); 
+    border: 2px solid var(--gray-1);
+    padding: 10px;
+}
+
+#port-wrap img{
+    height: 25px; 
+    width: 25px;
+}
+
+#port-list> li{
+    display: flex; 
+    justify-content: space-between;
+    span{
+        flex: 0.7;
+    }
+    
+    button{ 
+        cursor: pointer;
+    }
+}

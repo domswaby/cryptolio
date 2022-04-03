@@ -175,3 +175,26 @@ footer {
   height: 120px;
   border-radius: 100%;
 }
+
+#port-wrap {
+  background-color: var(--gray-3);
+  color: var(--white-1);
+  border: 2px solid var(--gray-1);
+  padding: 10px;
+}
+
+#port-wrap img {
+  height: 25px;
+  width: 25px;
+}
+
+#port-list > li {
+  display: flex;
+  justify-content: space-between;
+}
+#port-list > li span {
+  flex: 0.7;
+}
+#port-list > li button {
+  cursor: pointer;
+}
