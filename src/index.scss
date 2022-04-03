@@ -47,6 +47,11 @@ body{
   position: relative;
 }
 
+a, a:visited, a:link{
+	color: var(--white-1); 
+	text-decoration: none;
+}
+
 :root {
   --green-1:  rgba(155, 224, 176, 1);
   --green-2:  rgba(22, 219, 81, 1);
@@ -66,4 +71,5 @@ body{
 @import "./styles/search.scss"; 
 @import "./styles/header.scss"; 
 @import "./styles/my_port.scss"; 
+@import "./styles/chart.scss"; 
 

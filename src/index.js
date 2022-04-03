@@ -1,15 +1,12 @@
 import dataUtils from './scripts/dataUtil.js';
 import Portfolio from './scripts/portfolio.js';
-import Chart from './scripts/chart.js';
-// import searchUtils from './scripts/search.js';
+import barChart from './scripts/barChart.js';
 
-
-// the event listener's callback will be called AFTER the DOM is fully loaded.
-// The anonymous function **is not** called right at this point.
 document.addEventListener("DOMContentLoaded", () => {
-  // const dataUtils = require("./scripts/dataUtil.js"); 
+  
     let dataGrabber = new dataUtils(); 
     let myPortfolio = new Portfolio();
+    let myBarChart = new barChart();
     console.log(myPortfolio.portfolio);
 
     let coinsList = localStorage.getItem('coinsList');   
@@ -29,8 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         child.appendChild(button);
 
         button.addEventListener("click", (e) => {
-            myPortfolio.addCoin(result);
-            // console.log(myPortfolio.portfolio); 
+            myPortfolio.addCoin(result); 
         });
       })
     }
@@ -49,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let searchInput = document.querySelector("#search-input");
-    let searchButton = document.querySelector("#search-wrap > button")
     searchInput.addEventListener("keyup", function (e) {
       if(e.target.value === ''){
        resultList.innerHTML = ''; 
@@ -79,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let year = date.getFullYear();
     footer.innerHTML = `All rights reserved ©${year}`
 
-  }); 
+}); 
 
 
 

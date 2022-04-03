@@ -1,12 +1,19 @@
 import * as d3 from "d3";
 console.log(d3);
 
-class Chart{
+class barChart{
+    
     constructor(){
 
     }
 
+    renderChart(){
+
+    }
+
+
+
 
 }
 
-export default Chart;
+export default barChart;

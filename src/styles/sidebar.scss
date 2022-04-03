@@ -20,6 +20,18 @@
   justify-content: space-around;
   height: 70%; 
 }
+#siderbar > ul > li{
+  flex: 1; 
+  padding: 20px;
+}
+
+#sidebar > ul > li > a:hover{ 
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--white-1); 
+  
+  
+}
 
 
 

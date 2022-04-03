@@ -30,12 +30,22 @@
 <body>
   <section id="sidebar">
     <ul>
-      <li>Add Coin</li>
-      <li>My Port</li>
-      <li>Port Pie</li>
-      <li>Chart</li>
+      <li>
+        <a href="#add-coin-header">Add Coin</a>
+      </li>
+      <li>
+        <a href="#port-header">My Port</a>
+      </li>
+
+      <li>
+        <a href="#port-pie-header">Port Pie</a>
+      </li>
+      <li>
+        <a href="#price-chart-header">Price Chart</a>
+      </li>
     </ul>
   </section>
+
   <main id="main">
     <div id="header">
       <h1>Cryptolio 
@@ -53,7 +63,7 @@
 
     <content>
 
-      <h2>Add a coin</h2>
+      <h2 id="add-coin-header">Add a coin</h2>
       <div id="search-wrap">
         <label for="search-input">
           Coin name:
@@ -64,17 +74,17 @@
         </ol>
       </div>
 
-      <h2>My Port</h2>
+      <h2 id="port-header">My Port</h2>
       <div id="port-wrap">
         <ul id="port-list"></ul>
       </div>
 
-      <h2>Port Pie</h2>
+      <h2 id="port-pie-header">Port Pie</h2>
       <div id="port-pie-wrap">
         <svg></svg>
       </div>
 
-      <h2>Chart</h2>
+      <h2 id="price-chart-header">Chart</h2>
       <div id="chart-wrap">
         <svg></svg>
       </div>
