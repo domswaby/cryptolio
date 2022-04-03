@@ -1,5 +1,6 @@
 import dataUtils from './scripts/dataUtil.js';
 import Portfolio from './scripts/portfolio.js';
+import Chart from './scripts/chart.js';
 // import searchUtils from './scripts/search.js';
 
 
@@ -18,11 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
       resultList.innerHTML = ''; 
       results.forEach(function (result) {
         let child = document.createElement('li')
-        child.innerHTML = result.name;
         resultList.appendChild(child);
 
         let button = document.createElement('button')
+        let span = document.createElement('span')
+        span.innerHTML = result.name
         button.innerHTML = "add coin"
+        child.appendChild(span);
         child.appendChild(button);
 
         button.addEventListener("click", (e) => {

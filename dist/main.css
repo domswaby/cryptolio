@@ -64,7 +64,7 @@ body {
   --green-4: rgba(12, 120, 44, 1);
   --green-5: rgba(35, 92, 52, 1);
   --white-1: rgba(242,242,242, 1);
-  --gray-1: rgba(191,191,191, 1);
+  --gray-1: rgb(226, 222, 222);
   --gray-2: rgba(191,191,191, 1);
   --gray-3: rgba(88,89,89, 1);
   --black-1: rgba(13,13,13, 1);
@@ -138,6 +138,20 @@ footer {
   padding: 10px;
   margin: 0 0 0 10px;
   list-style-type: number;
+}
+
+#search-results > li {
+  display: flex;
+}
+#search-results > li span {
+  flex: 1;
+}
+#search-results > li button {
+  cursor: pointer;
+}
+
+#search-results > li:hover {
+  background-color: var(--gray-1);
 }
 
 #header {
