@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Got coinsList from localStorage")
       displaySearchResults(coinsList.slice(0, 10))
     }
-    
 
     let searchInput = document.querySelector("#search-input");
     let searchButton = document.querySelector("#search-wrap > button")
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let footer = document.querySelector("footer");
     let date = new Date();
     let year = date.getFullYear();
-  footer.innerHTML = `All rights reserved ©${year}`
+    footer.innerHTML = `All rights reserved ©${year}`
 
   }); 
 
