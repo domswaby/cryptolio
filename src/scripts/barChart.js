@@ -27,7 +27,7 @@ class barChart{
 
         const x  = d3.scaleBand()
             .domain(d3.range(testData.length))
-            .range([margin.left, width - margin.right])
+            .range([margin.left, width - margin.right]) // change margin.left to 0 to move scale back to left so chart isn't indented.  do this in yAxis definition too 
             .padding(0.1)
 
         const y = d3.scaleLinear()
