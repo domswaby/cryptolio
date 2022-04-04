@@ -11,15 +11,15 @@ let my_data;
 class DataUtil { 
 
   constructor() { 
-    this.ele = document.querySelector("#test-display");
+    // this.ele = document.querySelector("#test-display");
   }
   coinsList(){
 
     return fetch(coins_list_endpoint)
       .then(response => response.json())
       .then(data => {
-        // console.log(data);
-        this.ele.innerHTML = `The coins list has this many coins lol: ${data.length}`; 
+        console.log(data);
+        // this.ele.innerHTML = `The coins list has this many coins lol: ${data.length}`; 
         return data; 
       });
 

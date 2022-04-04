@@ -9,7 +9,7 @@ console.log(d3);
 const width = 800; 
 const height = 400; 
 const margin = {top: 50, bottom: 50, left: 50, right: 50}
-const port = JSON.parse(localStorage.getItem("portfolio"));
+const port = JSON.parse(localStorage.getItem("portfolio")) || [];
 const wrap = document.getElementById('#port-pie-wrap');
 
 
@@ -21,6 +21,7 @@ class barChart{
     }
 
     renderChart(){
+        let wrap = document.getElementById('#port-pie-wrap');
         const svg = d3.select('#port-pie-wrap')
             .append('svg')
             .attr('height', height - margin.top - margin.bottom)
@@ -30,7 +31,7 @@ class barChart{
         const x  = d3.scaleBand()
             .domain(d3.range(port.length))
             .range([margin.left, width - margin.right]) // change margin.left to 0 to move scale back to left so chart isn't indented.  do this in yAxis definition too 
-            .padding(0.1)
+            .padding(0.1);
 
         const y = d3.scaleLinear()
             .domain([0, Math.floor(d3.max(port, (d) => d.usd)) + 10])

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let coinsList = localStorage.getItem('coinsList');   
     let resultList = document.querySelector("#search-results");
-
+    
     const displaySearchResults = function (results) {
       resultList.innerHTML = ''; 
       results.forEach(function (result) {
@@ -27,13 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         button.addEventListener("click", (e) => {
             myPortfolio.addCoin(result).then((res) => {
-              myBarChart.reRenderChart();
+              // myBarChart.reRenderChart();
             }); 
         });
-      })
+      });
     }
-    
+
     if(!coinsList){
+      console.log("made it here"); 
       dataGrabber.coinsList().then((data) => {
         coinsList = data;
         localStorage.setItem('coinsList', JSON.stringify(data));
@@ -45,9 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Got coinsList from localStorage")
       displaySearchResults(coinsList.slice(0, 10))
     }
-
+   
     let searchInput = document.querySelector("#search-input");
     searchInput.addEventListener("keyup", function (e) {
+      console.log("triggered keyup"); 
       if(e.target.value === ''){
        resultList.innerHTML = ''; 
        return;
@@ -57,7 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }); 
     
     const filterSearchResults = () => {
-      let results = []
+      
+      let results = [];
       let value = searchInput.value.toLowerCase(); 
    
       for(let item of coinsList){

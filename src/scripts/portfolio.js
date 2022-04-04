@@ -88,7 +88,7 @@ class Portfolio{
             child.appendChild(dollarSpan);
             child.appendChild(button);
             list.appendChild(child);
-        })
+        });
 
     }
 }

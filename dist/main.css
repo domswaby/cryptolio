@@ -197,6 +197,7 @@ footer {
   color: var(--white-1);
   border: 2px solid var(--gray-1);
   padding: 10px;
+  min-height: 10em;
 }
 
 #port-wrap img {
