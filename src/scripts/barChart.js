@@ -10,7 +10,7 @@ const width = 800;
 const height = 400; 
 const margin = {top: 50, bottom: 50, left: 50, right: 50}
 const port = JSON.parse(localStorage.getItem("portfolio")) || [];
-const wrap = document.getElementById('#port-pie-wrap');
+const wrap = document.getElementById('port-pie-wrap');
 
 
 
@@ -21,7 +21,7 @@ class barChart{
     }
 
     renderChart(){
-        let wrap = document.getElementById('#port-pie-wrap');
+        
         const svg = d3.select('#port-pie-wrap')
             .append('svg')
             .attr('height', height - margin.top - margin.bottom)
@@ -41,7 +41,8 @@ class barChart{
             .attr('fill', 'black')
             .selectAll('rect')
             .data(port.sort((a, b) => d3.descending(a.usd, b.usd)))
-            .join('rect')
+            .enter()
+            .append('rect')
                 .attr('x', (d, i) => x(i))
                 .attr('y', (d) => y(d.usd))
                 .attr('height', d => y(0) - y(d.usd))
@@ -61,12 +62,12 @@ class barChart{
         }    
         svg.append('g').call(xAxis);
         svg.append('g').call(yAxis);
-        svg.node()
+        svg.node(); 
     }
 
     reRenderChart() {
         wrap.innerHTML = ""; 
-        
+        this.renderChart();
     }
 
 }

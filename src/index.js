@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         button.addEventListener("click", (e) => {
             myPortfolio.addCoin(result).then((res) => {
-              // myBarChart.reRenderChart();
+              myBarChart.reRenderChart();
             }); 
         });
       });
