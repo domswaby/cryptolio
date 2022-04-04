@@ -11,7 +11,7 @@
     width: 25px;
 }
 
-#port-list> li{
+#port-list  li{
     display: flex; 
     justify-content: space-between;
     div{
@@ -25,4 +25,13 @@
         flex: 0.2;
         cursor: pointer;
     }
+}
+
+#port-list > #amount-input > input{
+    flex: 1;
+}
+
+#port-list > #amount-input > span {
+    flex: 5;
+    text-align: right;
 }

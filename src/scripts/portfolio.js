@@ -54,16 +54,22 @@ class Portfolio{
         let list = document.querySelector("#port-list"); 
         list.innerHTML = ''; 
         let child; 
+        let child2;
         let image;
         let nameSpan;
         let button;
         let amountSpan; 
         let imageWrap; 
         let dollarSpan;
+        let input;
+        let inputSpan; 
         
         this.portfolio.forEach((ele) => {
             child = document.createElement('li');
-
+            child2 = document.createElement('li');
+            input = document.createElement('input'); 
+            inputSpan = document.createElement('span'); 
+            
             button = document.createElement('button');
             image = document.createElement('img');
             imageWrap = document.createElement('div');
@@ -76,10 +82,12 @@ class Portfolio{
                 this.removeCoin(ele);
             });
 
-            image.src = ele.image.thumb
+            image.src = ele.image.thumb; 
             nameSpan.innerHTML = ele.id;
             amountSpan.innerHTML = ele.amount;
             dollarSpan.innerHTML = ele.usd;
+            inputSpan.innerHTML = `Amount: `;
+            child2.setAttribute("id", 'amount-input');
 
             child.appendChild(imageWrap);
             imageWrap.appendChild(image);
@@ -87,7 +95,11 @@ class Portfolio{
             child.appendChild(amountSpan);
             child.appendChild(dollarSpan);
             child.appendChild(button);
+            child2.appendChild(inputSpan);
+            child2.appendChild(input);
+
             list.appendChild(child);
+            list.appendChild(child2);
         });
 
     }
