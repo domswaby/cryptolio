@@ -49,7 +49,10 @@ class barChart{
                 .attr('y', (d) => y(d.usd))
                 .attr('height', d => y(0) - y(d.usd))
                 .attr('width', x.bandwidth())
-                .attr('class', 'bar'); 
+                .attr('class', 'bar') 
+            .exit().remove();
+
+       // svg.selectAll('rect').data(port.sort((a, b) => d3.descending(a.usd, b.usd))).exit().remove(); 
 
         function xAxis(g){
             g.attr('transform', `translate(0, ${height - margin.bottom})`)

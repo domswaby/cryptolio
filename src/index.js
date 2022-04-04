@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let dataGrabber = new dataUtils(); 
     let myPortfolio = new Portfolio();
     let myBarChart = new barChart();
+    myPortfolio.barChart = myBarChart;
+    
     console.log(myPortfolio.portfolio);
 
     let coinsList = localStorage.getItem('coinsList');   

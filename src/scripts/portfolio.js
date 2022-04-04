@@ -44,8 +44,8 @@ class Portfolio{
         }); 
         this.portfolio = port;
         localStorage.setItem("portfolio", JSON.stringify(port)); 
+        this.barChart.buildChart();
         this.updatePortList();
-
     }
 
     updatePortList(){
@@ -62,7 +62,7 @@ class Portfolio{
         let dollarSpan;
         
         this.portfolio.forEach((ele) => {
-            child = document.createElement('li')
+            child = document.createElement('li');
 
             button = document.createElement('button');
             image = document.createElement('img');
@@ -71,10 +71,10 @@ class Portfolio{
             amountSpan = document.createElement('span');
             dollarSpan = document.createElement('span');
 
-            button.innerHTML = 'remove'
+            button.innerHTML = 'remove';
             button.addEventListener("click", (e) => {
                 this.removeCoin(ele);
-            })
+            });
 
             image.src = ele.image.thumb
             nameSpan.innerHTML = ele.id;
