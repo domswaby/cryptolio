@@ -53,22 +53,29 @@ class Portfolio{
         list.innerHTML = ''; 
         let child; 
         let image;
-        let span;
-        let button; 
+        let nameSpan;
+        let button;
+        let amountSpan; 
+        let imageWrap; 
         
         this.portfolio.forEach((ele) => {
             child = document.createElement('li')
             button = document.createElement('button');
             image = document.createElement('img');
-            span = document.createElement('span');
+            imageWrap = document.createElement('div');
+            nameSpan = document.createElement('span');
+            amountSpan = document.createElement('span');
             button.innerHTML = 'remove'
             button.addEventListener("click", (e) => {
                 this.removeCoin(ele);
             })
             image.src = ele.image.thumb
-            span.innerHTML = ele.id;
-            child.appendChild(image);
-            child.appendChild(span);
+            nameSpan.innerHTML = ele.id;
+            amountSpan.innerHTML = ele.amount;
+            child.appendChild(imageWrap);
+            imageWrap.appendChild(image);
+            child.appendChild(nameSpan);
+            child.appendChild(amountSpan);
             child.appendChild(button);
             list.appendChild(child);
         })

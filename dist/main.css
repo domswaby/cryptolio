@@ -208,10 +208,14 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+#port-list > li div {
+  flex: 0.5;
+}
 #port-list > li span {
-  flex: 0.7;
+  flex: 1;
 }
 #port-list > li button {
+  flex: 0.2;
   cursor: pointer;
 }
 
