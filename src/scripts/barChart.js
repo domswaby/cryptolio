@@ -17,11 +17,13 @@ const wrap = document.getElementById('port-pie-wrap');
 class barChart{
     
     constructor(){
-        this.renderChart();
+        this.buildChart();
     }
 
-    renderChart(){
-        
+    buildChart(){
+        let port = JSON.parse(localStorage.getItem("portfolio")) || [];
+        let wrap = document.getElementById('port-pie-wrap');
+        wrap.innerHTML = ''
         const svg = d3.select('#port-pie-wrap')
             .append('svg')
             .attr('height', height - margin.top - margin.bottom)
@@ -35,7 +37,7 @@ class barChart{
 
         const y = d3.scaleLinear()
             .domain([0, Math.floor(d3.max(port, (d) => d.usd)) + 10])
-            .range([height - margin.bottom, margin.top])
+            .range([height - margin.bottom, margin.top]);
         svg
             .append('g')
             .attr('fill', 'black')
@@ -47,7 +49,7 @@ class barChart{
                 .attr('y', (d) => y(d.usd))
                 .attr('height', d => y(0) - y(d.usd))
                 .attr('width', x.bandwidth())
-                .attr('class', 'bar')
+                .attr('class', 'bar'); 
 
         function xAxis(g){
             g.attr('transform', `translate(0, ${height - margin.bottom})`)
@@ -66,8 +68,11 @@ class barChart{
     }
 
     reRenderChart() {
-        wrap.innerHTML = ""; 
-        this.renderChart();
+        this.buildChart();
+    }
+
+    renderChart(){
+   
     }
 
 }

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }); 
         });
       });
-    }
+    };
 
     if(!coinsList){
       console.log("made it here"); 
