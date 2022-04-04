@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
         let span = document.createElement('span')
                 
         resultList.appendChild(child);
-        span.innerHTML = result.name
-        button.innerHTML = "add coin"
+        span.innerHTML = result.name;
+        button.innerHTML = "add coin";
         child.appendChild(span);
         child.appendChild(button);
 
         button.addEventListener("click", (e) => {
-            myPortfolio.addCoin(result); 
+            myPortfolio.addCoin(result).then((res) => {
+              myBarChart.reRenderChart();
+            }); 
         });
       })
     }

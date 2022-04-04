@@ -24,13 +24,14 @@ class Portfolio{
         if(!alreadyAdded){
             coin.amount = 1
             coin.image = {}
-            dataGrabber.coinInfo(coin).then((res) => {
+            return dataGrabber.coinInfo(coin).then((res) => {
                 coin.image.thumb = res.image.thumb;
                 coin.usd = res.market_data.current_price.usd;
                 this.portfolio.push(coin);
                 localStorage.setItem("portfolio", JSON.stringify(this.portfolio))
                 this.updatePortList();
                 console.log(this.getPortfolio());
+                return res
             })
         }else{
             alert(`You've already added ${coin.name}`)
@@ -88,8 +89,8 @@ class Portfolio{
             child.appendChild(button);
             list.appendChild(child);
         })
-    }
 
+    }
 }
 
 export default Portfolio;
