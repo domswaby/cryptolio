@@ -22,16 +22,17 @@ class Portfolio{
         let alreadyAdded = this.portfolio.some((ele) => ele.id === coin.id)
         
         if(!alreadyAdded){
-            coin.amount = 1
-            coin.image = {}
+            coin.amount = 1; 
+            coin.image = {}; 
             return dataGrabber.coinInfo(coin).then((res) => {
                 coin.image.thumb = res.image.thumb;
                 coin.usd = res.market_data.current_price.usd;
+                coin.price = res.market_data.current_price.usd;
                 this.portfolio.push(coin);
                 localStorage.setItem("portfolio", JSON.stringify(this.portfolio))
                 this.updatePortList();
                 console.log(this.getPortfolio());
-                return res
+                return res;
             })
         }else{
             alert(`You've already added ${coin.name}`)
@@ -42,6 +43,20 @@ class Portfolio{
         let port = this.portfolio.filter((ele) => {
             return ele.id !== coin.id
         }); 
+        this.portfolio = port;
+        localStorage.setItem("portfolio", JSON.stringify(port)); 
+        this.barChart.buildChart();
+        this.updatePortList();
+    }
+
+    updateCoinAmount(coin, amount){
+        let port = this.portfolio; 
+        port.forEach((ele, index) => {
+            if(ele.id === coin.id){
+                coin.amount = amount; 
+                coin.usd = Math.round(amount * coin.price * 100) / 100; 
+            }
+        });
         this.portfolio = port;
         localStorage.setItem("portfolio", JSON.stringify(port)); 
         this.barChart.buildChart();
@@ -81,6 +96,13 @@ class Portfolio{
             button.addEventListener("click", (e) => {
                 this.removeCoin(ele);
             });
+            input.addEventListener("keyup", (e) => {
+                e.stopPropagation();
+                if(e.code === "Enter"){
+                    this.updateCoinAmount(ele, e.target.value);
+                    e.target.value = ''; 
+                }
+            }); 
 
             image.src = ele.image.thumb; 
             nameSpan.innerHTML = ele.id;

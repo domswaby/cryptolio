@@ -23,7 +23,7 @@ class barChart{
     buildChart(){
         let port = JSON.parse(localStorage.getItem("portfolio")) || [];
         let wrap = document.getElementById('port-pie-wrap');
-        wrap.innerHTML = ''
+        wrap.innerHTML = ''; 
         const svg = d3.select('#port-pie-wrap')
             .append('svg')
             .attr('height', height - margin.top - margin.bottom)
