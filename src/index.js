@@ -3,7 +3,7 @@ import Portfolio from './scripts/portfolio.js';
 import barChart from './scripts/barChart.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  
+    
     let dataGrabber = new dataUtils(); 
     let myPortfolio = new Portfolio();
     let myBarChart = new barChart();
@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     console.log(myPortfolio.portfolio);
 
+    let header = document.querySelector("#header > h1");
+    header.classList.add('header-shown');
     let coinsList = localStorage.getItem('coinsList');   
     let resultList = document.querySelector("#search-results");
     
