@@ -1,16 +1,20 @@
 import dataUtils from './scripts/dataUtil.js';
 import Portfolio from './scripts/portfolio.js';
 import barChart from './scripts/barChart.js';
+import lineChart from './scripts/lineChart.js';
+
 
 document.addEventListener("DOMContentLoaded", () => {
     
     let dataGrabber = new dataUtils(); 
     let myPortfolio = new Portfolio();
     let myBarChart = new barChart();
+    let mylineChart = new lineChart(); 
+
     myPortfolio.barChart = myBarChart;
     
     console.log(myPortfolio.portfolio);
-
+    
     // page load header transition animations
     let headerTitle = document.querySelector("#header > h1");
     headerTitle.classList.add('header-shown');
@@ -49,13 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
       dataGrabber.coinsList().then((data) => {
         coinsList = data;
         localStorage.setItem('coinsList', JSON.stringify(data));
-        console.log("Got coinsList from API")
-        displaySearchResults(coinsList.slice(0,10))  
+        console.log("Got coinsList from API");
+        displaySearchResults(coinsList.slice(0,10));  
       });  
     }else{
+     
       coinsList = JSON.parse(localStorage.getItem('coinsList')); 
-      console.log("Got coinsList from localStorage")
-      displaySearchResults(coinsList.slice(0, 10))
+      console.log("Got coinsList from localStorage");
+      displaySearchResults(coinsList.slice(0, 10));
     }
    
     let searchInput = document.querySelector("#search-input");

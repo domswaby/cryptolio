@@ -6,9 +6,11 @@ console.log(d3);
 //     {name: 'Mary', score: 90}, 
 //     {name: 'John', score: 60}
 // ]
+
+
 const width = 800; 
 const height = 400; 
-const margin = {top: 50, bottom: 50, left: 50, right: 50}
+const margin = {top: 50, bottom: 50, left: 50, right: 50}; 
 const port = JSON.parse(localStorage.getItem("portfolio")) || [];
 const wrap = document.getElementById('port-pie-wrap');
 
