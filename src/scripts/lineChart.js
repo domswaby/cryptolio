@@ -1,8 +1,4 @@
 import * as d3 from "d3";
-console.log(d3);
-// const formatTime = d3.timeFormat("%Y-%m-%d"); // "%Y-%m-%d" used in example 
-// const myTime = formatTime(1617667200000); 
-// console.log(myTime); // April 05, 2021
 
 const parseDate = d3.timeParse("%Q");
 // const myTime2 = parseDate("1617667200000"); 

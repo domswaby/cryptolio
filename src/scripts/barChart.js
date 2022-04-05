@@ -1,19 +1,10 @@
 import * as d3 from "d3";
 
-// const testData = [
-//     {name: 'Simon', score: 80}, 
-//     {name: 'Mary', score: 90}, 
-//     {name: 'John', score: 60}
-// ]
-
-
 const width = 800; 
 const height = 400; 
 const margin = {top: 50, bottom: 50, left: 50, right: 50}; 
 const port = JSON.parse(localStorage.getItem("portfolio")) || [];
 const wrap = document.getElementById('port-pie-wrap');
-
-
 
 class barChart{
     
