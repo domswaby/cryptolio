@@ -17,7 +17,8 @@ const wrap = document.getElementById('port-pie-wrap');
 
 class barChart{
     
-    constructor(){
+    constructor(myLineChart){
+        this.myLineChart = myLineChart; 
         this.buildChart();
     }
 
@@ -51,6 +52,11 @@ class barChart{
                 .attr('height', d => y(0) - y(d.usd))
                 .attr('width', x.bandwidth())
                 .attr('class', 'bar') 
+                .attr('id', d => d.id)
+                .on('click', (ele) => {
+                    console.log(`This is ele - ${ele.target}`); 
+                    this.myLineChart.renderChart(ele.target.id);
+                })
             .exit().remove();
 
        // svg.selectAll('rect').data(port.sort((a, b) => d3.descending(a.usd, b.usd))).exit().remove(); 

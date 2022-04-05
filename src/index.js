@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let dataGrabber = new dataUtils(); 
     let myPortfolio = new Portfolio();
-    let myBarChart = new barChart();
-    let mylineChart = new lineChart(dataGrabber, "bitcoin"); 
+    let myLineChart = new lineChart(dataGrabber, "bitcoin"); 
+    let myBarChart = new barChart(myLineChart);
 
     myPortfolio.barChart = myBarChart;
     
