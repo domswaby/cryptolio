@@ -64,8 +64,7 @@ class Portfolio{
     }
 
     updatePortList(){
-        if(this.portfolio.length === 0) return;
-       
+               
         let list = document.querySelector("#port-list"); 
         list.innerHTML = ''; 
         let child; 
