@@ -1,9 +1,9 @@
 #port-wrap{
     background-color: var(--gray-3);
     color: var(--white-1); 
-    border: 2px solid var(--gray-1);
+    border: 2px solid var(--white-1);
     padding: 10px;
-    min-height: 10em;
+    min-height: 5em;
 }
 
 #port-wrap img{
@@ -14,6 +14,8 @@
 #port-list  li{
     display: flex; 
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
     div{
         flex: 0.5;
     }
@@ -27,11 +29,21 @@
     }
 }
 
+#port-list > #amount-input{
+    border-bottom: 2px solid var(--gray-2); 
+}
 #port-list > #amount-input > input{
-    width: 5%; 
+    flex: 1;  
 }
 
 #port-list > #amount-input > span {
-    width: 95%;
+    flex: 5;
     text-align: right;
+    color: var(--gray-1);
+    
+}
+
+.dollar-number{
+    color: var(--green-2); 
+    
 }

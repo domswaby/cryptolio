@@ -90,6 +90,7 @@ class Portfolio{
             nameSpan = document.createElement('span');
             amountSpan = document.createElement('span');
             dollarSpan = document.createElement('span');
+            dollarSpan.classList.add('dollar-number'); 
 
             button.innerHTML = 'remove';
             button.addEventListener("click", (e) => {
@@ -106,7 +107,7 @@ class Portfolio{
             image.src = ele.image.thumb; 
             nameSpan.innerHTML = ele.id;
             amountSpan.innerHTML = ele.amount;
-            dollarSpan.innerHTML = ele.usd;
+            dollarSpan.innerHTML = `$${ele.usd}`;
             inputSpan.innerHTML = `Amount: `;
             child2.setAttribute("id", 'amount-input');
 
