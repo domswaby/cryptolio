@@ -9,7 +9,10 @@
   "scripts": {
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production", 
-    "start": "webpack --mode=production"
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "14.18.1" 
   },
   "repository": {
     "type": "git",
