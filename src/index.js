@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let headerTitle = document.querySelector("#header > h1");
     headerTitle.classList.add('header-shown');
     let headerImage = document.querySelector("#cyberfrog");
-    headerImage.classList.add('rotated');
+    headerImage.classList.add('moved');
 
     let coinsList = localStorage.getItem('coinsList');   
     let resultList = document.querySelector("#search-results");
