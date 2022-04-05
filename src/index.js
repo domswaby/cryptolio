@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
     console.log(myPortfolio.portfolio);
 
-    let header = document.querySelector("#header > h1");
-    header.classList.add('header-shown');
+    // page load header transition animations
+    let headerTitle = document.querySelector("#header > h1");
+    headerTitle.classList.add('header-shown');
+    let headerImage = document.querySelector("#cyberfrog");
+    headerImage.classList.add('rotated');
+
     let coinsList = localStorage.getItem('coinsList');   
     let resultList = document.querySelector("#search-results");
     
