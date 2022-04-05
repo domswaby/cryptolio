@@ -1,4 +1,3 @@
-console.log("hello I'm dataUtil"); 
 let root_url = "https://api.coingecko.com/api/v3"; 
 // let simple_price_endpoint = root_url + "/simple/price?ids=bitcoin&vs_currencies=usd"; 
 let simple_price_endpoint = root_url + "/simple/price?"; 
