@@ -30,7 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", (e) => {
             myPortfolio.addCoin(result).then((res) => {
               myBarChart.reRenderChart();
+              searchInput.value = ""; 
+              displaySearchResults([]); // make search results disappear after clicking add coin button
             }); 
+
         });
       });
     };
