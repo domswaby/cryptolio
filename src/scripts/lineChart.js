@@ -14,8 +14,13 @@ const wrap = document.getElementById('chart-wrap');
 
 class lineChart{
     
-    constructor(){
-        this.buildChart();
+    constructor(dataGrabber, coin_id){
+        this.dataGrabber = dataGrabber;
+        this.dataGrabber.coinHistory(coin_id).then((res) => {
+          console.log(`This is the data inside line Chart constructor: ${res.prices}`); 
+          this.data = res.prices; 
+        }); 
+        // this.buildChart();
     }
 
     buildChart(){

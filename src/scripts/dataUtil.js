@@ -1,17 +1,18 @@
 console.log("hello I'm dataUtil"); 
-
 let root_url = "https://api.coingecko.com/api/v3"; 
 // let simple_price_endpoint = root_url + "/simple/price?ids=bitcoin&vs_currencies=usd"; 
 let simple_price_endpoint = root_url + "/simple/price?"; 
 // let coin_endpoint = root_url + "/coins/bitcoin"; 
 let coin_info_endpoint = root_url + "/coins"; 
 let coins_list_endpoint = root_url + "/coins/list"; 
+let coin_history_endpoint_part_2 = "/market_chart?vs_currency=usd&days=365&interval=daily"; 
+
 let my_data; 
 
 class DataUtil { 
 
   constructor() { 
-    // this.ele = document.querySelector("#test-display");
+    
   }
   coinsList(){
 
@@ -19,7 +20,6 @@ class DataUtil {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        // this.ele.innerHTML = `The coins list has this many coins lol: ${data.length}`; 
         return data; 
       });
 
@@ -41,6 +41,17 @@ class DataUtil {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      return data;
+      // ele.innerHTML = `The bitcoin symbol is: <img src='${data.image.thumb}' />`;
+    });
+  }
+
+  coinHistory(coin_id){
+    let endpoint = `${root_url}/coins/${coin_id}${coin_history_endpoint_part_2}`; 
+    return fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      console.log(`Inside coin history function ${data}`);
       return data;
       // ele.innerHTML = `The bitcoin symbol is: <img src='${data.image.thumb}' />`;
     });
