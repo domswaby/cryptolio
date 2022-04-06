@@ -94,6 +94,28 @@ document.addEventListener("DOMContentLoaded", () => {
     let year = date.getFullYear();
     footer.innerHTML = `All rights reserved ©${year}`; 
 
+    // scroller 
+
+    const scrollToElement = function (elementId){
+      console.log(elementId);
+      let ele = document.getElementById(`${elementId}`); 
+      ele.scrollIntoView(true); 
+    }; 
+
+    const scrollToAddCoin = function () {
+     
+      ele.scrollIntoView(true);
+    }; 
+
+    let addCoinLink = document.getElementById('add-coin-link');
+    addCoinLink.addEventListener("click", () => {
+      console.log("scrolled"); 
+      let ele = document.getElementById('add-coin-header');
+      ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }); 
+ 
+
+
 }); 
 
 
