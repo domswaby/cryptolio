@@ -1,8 +1,8 @@
 import * as d3 from "d3";
 
 const width = 800; 
-const height = 400; 
-const margin = {top: 50, bottom: 50, left: 50, right: 50}; 
+const height = 600; 
+const margin = {top: 50, bottom: 100, left: 50, right: 50}; 
 const port = JSON.parse(localStorage.getItem("portfolio")) || [];
 const wrap = document.getElementById('port-pie-wrap');
 
@@ -58,6 +58,13 @@ class barChart{
             g.attr('transform', `translate(0, ${height - margin.bottom})`)
                 .call(d3.axisBottom(x).tickFormat(i => port[i].id))
                 .attr('font-size', '1.2em')
+                .selectAll("text")
+                .style("text-anchor", "end")
+                .attr("dx", "-.4em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-30)")
+                .attr("color", "var(--green-3)"); 
+                
         }
 
         function yAxis(g){

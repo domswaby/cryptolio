@@ -229,6 +229,7 @@ footer {
   display: flex;
   font-size: 1.2em;
   margin-bottom: 5px;
+  border-radius: 100px;
 }
 #search-results > li span {
   flex: 1;
@@ -378,6 +379,10 @@ footer {
   fill: var(--green-2);
   opacity: 0.9;
   cursor: pointer;
+}
+
+#port-pie-wrap {
+  margin-bottom: 2em;
 }
 
 #price-chart-header > span {
