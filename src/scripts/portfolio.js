@@ -85,11 +85,14 @@ class Portfolio{
             inputSpan = document.createElement('span'); 
             
             button = document.createElement('button');
+            
             image = document.createElement('img');
             imageWrap = document.createElement('div');
             nameSpan = document.createElement('span');
             amountSpan = document.createElement('span');
             dollarSpan = document.createElement('span');
+            
+            button.classList.add('remove-button');
             dollarSpan.classList.add('dollar-number'); 
 
             button.innerHTML = 'remove';
@@ -103,7 +106,6 @@ class Portfolio{
                     e.target.value = ''; 
                 }
             }); 
-
             image.src = ele.image.thumb; 
             nameSpan.innerHTML = ele.id;
             amountSpan.innerHTML = ele.amount;

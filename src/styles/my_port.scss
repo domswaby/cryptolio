@@ -4,6 +4,7 @@
     border: 2px solid var(--white-1);
     padding: 10px;
     min-height: 5em;
+    z-index: -3; 
 }
 
 #port-wrap img{
@@ -46,4 +47,22 @@
 .dollar-number{
     color: var(--green-2); 
     
+}
+
+.remove-button{
+    cursor: pointer; 
+    padding: 10px; 
+    border-radius: 10px;
+    background: var(--gray-1);
+    color: var(--black-1);
+    font-weight: 800;
+    font-size: 1.1em;
+    transition: 1s;
+    position: relative; 
+    
+    text-align: center;
+}
+.remove-button:hover{
+    color: var(--white-1);
+    background-color: var(--black-1);
 }

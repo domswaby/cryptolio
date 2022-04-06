@@ -62,6 +62,10 @@ a, a:visited, a:link {
   text-decoration: none;
 }
 
+button {
+  background-color: none;
+}
+
 :root {
   --green-1: rgba(155, 224, 176, 1);
   --green-2: rgba(22, 219, 81, 1);
@@ -151,6 +155,70 @@ footer {
   margin-bottom: 20px;
 }
 
+#search-wrap > button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  background: none;
+  color: var(--gray-3);
+  font-weight: 800;
+  font-size: 1.1em;
+  transition: 1s;
+  position: relative;
+  overflow: hidden;
+}
+
+#search-wrap > button:hover {
+  color: var(--black-1);
+}
+
+#search-wrap > button::before {
+  content: "";
+  position: absolute;
+  color: var(--black-1);
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--green-1);
+  z-index: -1;
+  transition: 0.8s;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+#search-wrap > button:hover::before {
+  height: 180%;
+}
+
+#search-wrap > label > span {
+  font-size: 1.3em;
+}
+
+#search-input {
+  position: relative;
+  height: 100%;
+  background-color: var(--gray-3);
+  color: white;
+  font-size: 1.1em;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--gray-2);
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--gray-2);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--gray-2);
+}
+
 #search-results {
   padding: 10px;
   margin: 0 0 0 10px;
@@ -159,6 +227,8 @@ footer {
 
 #search-results > li {
   display: flex;
+  font-size: 1.2em;
+  margin-bottom: 5px;
 }
 #search-results > li span {
   flex: 1;
@@ -169,6 +239,26 @@ footer {
 
 #search-results > li:hover {
   background-color: var(--gray-1);
+}
+
+#search-results > li > button {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  font-size: 1em;
+  color: var(--gray-3);
+  font-weight: 600;
+  border: 3px solid var(--green-2);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: 1s;
+}
+
+#search-results > li > button:hover {
+  box-shadow: 0 0 15px 0 var(--green-2) inset, 0 0 15px 0 var(--green-3), 0 0 15px 0 var(--green-2) inset, 0 0 15px 0 var(--green-3);
+  text-shadow: 0 0 1px var(--green-3), 0 0 1px var(--green-3);
 }
 
 #header {
@@ -223,6 +313,7 @@ footer {
   border: 2px solid var(--white-1);
   padding: 10px;
   min-height: 5em;
+  z-index: -3;
 }
 
 #port-wrap img {
@@ -263,6 +354,24 @@ footer {
 
 .dollar-number {
   color: var(--green-2);
+}
+
+.remove-button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--gray-1);
+  color: var(--black-1);
+  font-weight: 800;
+  font-size: 1.1em;
+  transition: 1s;
+  position: relative;
+  text-align: center;
+}
+
+.remove-button:hover {
+  color: var(--white-1);
+  background-color: var(--black-1);
 }
 
 .bar:hover {

@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         displaySearchResults(coinsList.slice(0,10));  
       });  
     }else{
-     
       coinsList = JSON.parse(localStorage.getItem('coinsList')); 
       console.log("Got coinsList from localStorage");
       displaySearchResults(coinsList.slice(0, 10));
@@ -93,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let footer = document.querySelector("footer");
     let date = new Date();
     let year = date.getFullYear();
-    footer.innerHTML = `All rights reserved ©${year}`
+    footer.innerHTML = `All rights reserved ©${year}`; 
 
 }); 
 

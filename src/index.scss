@@ -53,6 +53,10 @@ a, a:visited, a:link{
 	text-decoration: none;
 }
 
+button { 
+	background-color: none;
+}
+
 :root {
   --green-1:  rgba(155, 224, 176, 1);
   --green-2:  rgba(22, 219, 81, 1);
