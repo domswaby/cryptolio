@@ -270,3 +270,7 @@ footer {
   opacity: 0.9;
   cursor: pointer;
 }
+
+#price-chart-header > span {
+  color: var(--green-4);
+}

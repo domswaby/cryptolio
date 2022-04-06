@@ -29,19 +29,19 @@ class Portfolio{
                 coin.usd = res.market_data.current_price.usd;
                 coin.price = res.market_data.current_price.usd;
                 this.portfolio.push(coin);
-                localStorage.setItem("portfolio", JSON.stringify(this.portfolio))
+                localStorage.setItem("portfolio", JSON.stringify(this.portfolio));
                 this.updatePortList();
                 console.log(this.getPortfolio());
                 return res;
-            })
+            });
         }else{
-            alert(`You've already added ${coin.name}`)
+            alert(`You've already added ${coin.name}`);
         }
     }
 
     removeCoin(coin){
         let port = this.portfolio.filter((ele) => {
-            return ele.id !== coin.id
+            return ele.id !== coin.id;
         }); 
         this.portfolio = port;
         localStorage.setItem("portfolio", JSON.stringify(port)); 

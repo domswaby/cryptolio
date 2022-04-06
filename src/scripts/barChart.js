@@ -45,8 +45,10 @@ class barChart{
                 .attr('class', 'bar') 
                 .attr('id', d => d.id)
                 .on('click', (ele) => {
-                    console.log(`This is ele - ${ele.target}`); 
                     this.myLineChart.renderChart(ele.target.id);
+                    let id = ele.target.id; 
+                    let lineChartTitle = id.slice(0,1).toUpperCase() + id.slice(1).toLowerCase(); 
+                    document.querySelector("#price-chart-header > span").innerHTML = "- " + lineChartTitle;
                 })
             .exit().remove();
 
