@@ -229,7 +229,7 @@ footer {
   display: flex;
   font-size: 1.2em;
   margin-bottom: 5px;
-  border-radius: 100px;
+  border-radius: 0 100px 100px 0;
 }
 #search-results > li span {
   flex: 1;
