@@ -2,7 +2,7 @@ import * as d3 from "d3";
 
 const width = 800; 
 const height = 600; 
-const margin = {top: 50, bottom: 100, left: 50, right: 50}; 
+const margin = {top: 50, bottom: 100, left: 0, right: 50}; 
 const port = JSON.parse(localStorage.getItem("portfolio")) || [];
 const wrap = document.getElementById('port-pie-wrap');
 
@@ -70,7 +70,7 @@ class barChart{
         function yAxis(g){
             g.attr('transform', `translate(${margin.left}, 0)`)
                 .call(d3.axisLeft(y).ticks(null, port.format))
-                .attr('font-size', '1.2em')
+                .attr('font-size', '1.2em');
         }    
         svg.append('g').call(xAxis);
         svg.append('g').call(yAxis);

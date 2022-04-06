@@ -386,5 +386,10 @@ footer {
 }
 
 #price-chart-header > span {
-  color: var(--green-4);
+  color: var(--gray-3);
+}
+
+#chart-wrap text {
+  color: var(--gray-3);
+  font-size: 1.3em;
 }
