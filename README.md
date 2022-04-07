@@ -1,5 +1,6 @@
 <h1>Cryptolio</h1>
-![CryptolioWireframe](https://user-images.githubusercontent.com/10789682/162235152-28d040d8-5362-4414-9e87-032575c216dd.png)
+
+<img src="screenshots/cryptolio_wireframe.png" />
 
 <a href="https://domswaby.github.io/js-project">Cryptolio</a> allows users to quickly build and visualize a cryptocurrency portfolio by searching for and adding cryptocurrencies, and entering the quantity held of each coin. 
 ![modal_instructions](https://user-images.githubusercontent.com/10789682/162228527-bdf94d51-0ade-4aa5-92b4-ec85a7cb33b6.png)
@@ -23,6 +24,7 @@ Libraries and Apis:
 2. The coingecko API is used for fetching the necessary crypto data. 
 
 <h2>Future Implementations</h2> 
+
 1. Add extra fields to the portfolio table to allow user to save information about buy and sell dates.
 2. Click on different parts of the line chart in order to save information about buy and sell dates.  
 3. Calculate profit and loss from information about buy and sell dates in combination with historical price data.
