@@ -1,5 +1,5 @@
 <h1>Cryptolio</h1>
-![](assets/screenshots/cryptolio_wireframe.png)
+![](screenshots/cryptolio_wireframe.png)
 
 <a href="https://domswaby.github.io/js-project">Cryptolio</a> allows users to quickly build and visualize a cryptocurrency portfolio by searching for and adding cryptocurrencies, and entering the quantity held of each coin. 
 ![modal_instructions](https://user-images.githubusercontent.com/10789682/162228527-bdf94d51-0ade-4aa5-92b4-ec85a7cb33b6.png)
