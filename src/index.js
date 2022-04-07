@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       displaySearchResults(results);
-    }
+    };
 
     // footer
     let footer = document.querySelector("footer");
@@ -126,11 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal.addEventListener("click", () => {
       console.log("made it to the listener")
       modalContainer.classList.add('show-modal')
-    })
+    });
     
     closeModal.addEventListener("click", () => {
       modalContainer.classList.remove('show-modal')
-    })
+    });
 }); 
 
 

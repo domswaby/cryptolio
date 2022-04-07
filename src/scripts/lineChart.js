@@ -44,10 +44,6 @@ class lineChart{
             };
           });
 
-          console.log(data[0]); 
-
-          // console.log(`Data formatted: ${data[0].price}`); // data is formatted correctly
-
           var svg = d3.select("#chart-wrap")
             .append("svg")
             .attr("width", width + margin.left + margin.right)

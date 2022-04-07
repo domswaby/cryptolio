@@ -25,7 +25,7 @@ class barChart{
 
         const x  = d3.scaleBand()
             .domain(d3.range(port.length))
-            .range([margin.left, width - margin.right]) // change margin.left to 0 to move scale back to left so chart isn't indented.  do this in yAxis definition too 
+            .range([margin.left, width - margin.right]) 
             .padding(0.1);
 
         const y = d3.scaleLinear()
@@ -52,8 +52,6 @@ class barChart{
                 })
             .exit().remove();
 
-       // svg.selectAll('rect').data(port.sort((a, b) => d3.descending(a.usd, b.usd))).exit().remove(); 
-
         function xAxis(g){
             g.attr('transform', `translate(0, ${height - margin.bottom})`)
                 .call(d3.axisBottom(x).tickFormat(i => port[i].id))
@@ -63,8 +61,7 @@ class barChart{
                 .attr("dx", "-.4em")
                 .attr("dy", ".15em")
                 .attr("transform", "rotate(-30)")
-                .attr("color", "var(--green-3)"); 
-                
+                .attr("color", "var(--green-3)");     
         }
 
         function yAxis(g){
