@@ -1,5 +1,4 @@
-# js-project
-Crypto portfolio analyzer
+<h1>Cryptolio</h1>
 
 Background:
 This crypto porfolio analyzer allows you to input information about your cryptocurrency purchases, namely the coin, amount, and date of purchase.  It uses the information to generate a visualization of the portfolio.  
