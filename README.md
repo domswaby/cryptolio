@@ -1,38 +1,28 @@
 <h1>Cryptolio</h1>
 
-Background:
-This crypto porfolio analyzer allows you to input information about your cryptocurrency purchases, namely the coin, amount, and date of purchase.  It uses the information to generate a visualization of the portfolio.  
+<a href="https://domswaby.github.io/js-project/">Cryptolio allows users to quickly build and visualize a cryptocurrency portfolio by searching for and adding cryptocurrencies, and entering the quantity held of each coin. 
+![modal_instructions](https://user-images.githubusercontent.com/10789682/162228527-bdf94d51-0ade-4aa5-92b4-ec85a7cb33b6.png)
 
-Functionality: 
-Users will be able to: 
-1. Search for and select a wide range of cryptos to add to their portfolio
-2. Click a point on a line graph showing historical price as a way of inputting purchase date.  
-3. Click on pieces of a pie chart to display all information about particular pieces of the portfolio.    
-4. Use a profit calculator to see how much they will make after selling at a particular price.  
+<h2>Functionality:</h2>
+Users are be able to: 
+<h3>1. Search for and select a wide range of cryptos to add to their portfolio</h3>
+![search](https://user-images.githubusercontent.com/10789682/162229026-82d7a8a1-e504-4f0a-8979-47e328e249b9.png)
 
-This project will also include: 
-1. instructions 
-2. readme 
-3. links to my github, linked in, and personal website 
+<h3>2. Enter and store quantities for each coin added.</h3>
+![Screen Shot 2022-04-07 at 10 59 44 AM](https://user-images.githubusercontent.com/10789682/162230181-65e23828-cb2a-4c6c-8288-f8f26867c1f4.png)
+ 
+<h3>3. View the generated bar chart for a proportional view of coins in the portfolio.</h3>
+![Screen Shot 2022-04-07 at 10 51 57 AM](https://user-images.githubusercontent.com/10789682/162232397-a98b454a-d46b-48a4-ac48-3e550b2fba21.png)
+  
+<h3>4. View historical price of the selected coin bar in a line chart.</h3>
+![Screen Shot 2022-04-07 at 10 51 57 AM](https://user-images.githubusercontent.com/10789682/162232646-064e786d-61a5-4148-a910-14ce1f90a9d6.png)
 
 Libraries and Apis: 
-1. D3 will be used to render the data visualizations.  
-2. The coingecko API will be used for fetching the necessary data 
+1. D3 is used to render the data visualizations.  
+2. The coingecko API is used for fetching the necessary crypto data. 
 
-Implementation Timeline: 
-
-Friday afternoon and the weekend: 
-Set up the general project structure and make sure the data is effectively being pulled from the API and parsed  to be used with the app.  Do general styling for the project.  Implement the search for coins and add to portfolio functionality.  Try to get started with charting and using D3.    
-
-Monday: 
-I'll work with D3 and render data the way I want it to.  
-
-Tuesday: 
-I'll add interactivity to the charts
-
-Wednesday: 
-Continue with D3 to add any additional functionality, then fix any existing bugs, and clean up the UI if time permits. 
-
-Thursday morning: 
-Deploy to github pages or heroku.  
+<h2>Future Implementations</h2> 
+1. Add extra fields to the portfolio table to allow user to save information about buy and sell dates.
+2. Click on different parts of the line chart in order to save information about buy and sell dates.  
+3. Calculate profit and loss from information about buy and sell dates in combination with historical price data.
 
