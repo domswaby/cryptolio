@@ -8,7 +8,7 @@
 <h2>Functionality:</h2>
 Users are be able to: 
 <h3>1. Search for and select a wide range of cryptos to add to their portfolio</h3>
-<img src="screenshots/search.png"
+<img src="screenshots/search.png" />
 <img src="screenshots/filter_search_results.png" />
 
 <h3>2. Enter and store quantities for each coin added.</h3>
