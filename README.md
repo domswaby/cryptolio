@@ -7,7 +7,7 @@
 <h2>Functionality:</h2>
 Users are be able to: 
 <h3>1. Search for and select a wide range of cryptos to add to their portfolio</h3>
-![search](https://user-images.githubusercontent.com/10789682/162229026-82d7a8a1-e504-4f0a-8979-47e328e249b9.png)
+![search](https://user-images.githubusercontent.com/10789682/162236100-66af2e8d-b6b1-44ed-9faf-6668aaee905a.png)
 
 <h3>2. Enter and store quantities for each coin added.</h3>
 ![Screen Shot 2022-04-07 at 10 59 44 AM](https://user-images.githubusercontent.com/10789682/162230181-65e23828-cb2a-4c6c-8288-f8f26867c1f4.png)
