@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
       displaySearchResults(results);
     }
 
-    // footer stuff
+    // footer
     let footer = document.querySelector("footer");
     let date = new Date();
     let year = date.getFullYear();
@@ -116,7 +116,21 @@ document.addEventListener("DOMContentLoaded", () => {
       let ele = document.getElementById('price-chart-header');
       ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }); 
- 
+
+    // question modal
+
+    const openModal = document.querySelector('.open-modal-btn')
+    const modalContainer = document.querySelector('.modal-container')
+    const closeModal = document.querySelector('.close-modal-btn')
+    
+    openModal.addEventListener("click", () => {
+      console.log("made it to the listener")
+      modalContainer.classList.add('show-modal')
+    })
+    
+    closeModal.addEventListener("click", () => {
+      modalContainer.classList.remove('show-modal')
+    })
 }); 
 
 

@@ -37,6 +37,7 @@
     top: 400%;
     right: 200%; 
     opacity: 0; 
+
 }
 
 #cyberfrog.moved{
@@ -46,4 +47,10 @@
     border-radius: 100%;
     transition: top 1s, right 1s, opacity 2.5s;
     
+}
+
+#cyberfrog:hover{
+    transition: 0.3s;
+    border-radius: 0;
+    box-shadow: -10px 10px 8px rgba(0,0,0, 0.8); 
 }

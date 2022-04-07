@@ -115,6 +115,95 @@ footer {
   float: right;
 }
 
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.modal-container.show-modal {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.question-modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 600px;
+  position: relative;
+  max-width: 100%;
+  padding: 3em;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.2em;
+  color: var(--green-3);
+}
+
+.question-modal > h1 {
+  font-size: 3em;
+  color: var(--white-1);
+  margin-bottom: 1.5em;
+}
+
+.question-modal > ol {
+  font-size: 1.5em;
+  list-style-type: number;
+}
+
+.question-modal > ol > li {
+  margin-bottom: 10px;
+}
+
+.question-modal > p {
+  font-size: 1.5em;
+}
+
+.close-modal-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  border-radius: 100%;
+  background-color: var(--gray-2);
+  border: none;
+  transition: 0.3s;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.close-modal-btn:hover {
+  transform: rotate(360deg);
+}
+
+.open-modal-btn {
+  background: none;
+  border: none;
+  transition: 0.3s;
+}
+
+.open-modal-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+}
+
+.linked-in-link > img:hover {
+  cursor: pointer;
+}
+
+.github-link > img:hover {
+  cursor: pointer;
+}
+
 #sidebar {
   width: 20%;
   height: 100%;
@@ -306,6 +395,12 @@ footer {
   opacity: 1;
   border-radius: 100%;
   transition: top 1s, right 1s, opacity 2.5s;
+}
+
+#cyberfrog:hover {
+  transition: 0.3s;
+  border-radius: 0;
+  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.8);
 }
 
 #port-wrap {
