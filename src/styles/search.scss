@@ -1,10 +1,12 @@
 #search-wrap{
-    padding: 10px;
     border: 2px solid var(--gray-1);
     margin-bottom: 20px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
 }
 
-#search-wrap > button{
+#search-wrap > label > button{
     cursor: pointer; 
     padding: 10px; 
     border-radius: 10px;
@@ -16,11 +18,11 @@
     position: relative; 
     overflow: hidden; 
 }
-#search-wrap > button:hover{
+#search-wrap > label > button:hover{
     color: var(--black-1);
 }
 
-#search-wrap > button::before{
+#search-wrap > label > button::before{
     content: ""; 
     position: absolute; 
     color: var(--black-1); 
@@ -34,12 +36,19 @@
     border-radius: 50% 50% 0 0 ; 
 }
 
-#search-wrap > button:hover::before{
+#search-wrap > label > button:hover::before{
     height: 180%; 
 }
 
 #search-wrap > label > span{
     font-size: 1.3em;
+}
+#search-wrap > label { 
+    border-bottom: 2px solid var(--gray-2);
+    padding: 1rem;
+    background-color: var(--gray-1);
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 #search-input { 
@@ -64,15 +73,17 @@
 
 #search-results{
     padding: 10px;
-    margin: 0 0 0 10px; // this puts list numbers inside of the border box
+    // margin: 0 0 0 10px; // this puts list numbers inside of the border box
     list-style-type: number;
 }
 
 #search-results > li{
     display: flex; 
     font-size: 1.2em;
-    margin-bottom: 5px;
     border-radius: 0 100px 100px 0;
+    padding: 10px; 
+    box-sizing: border-box;
+    transition: 0.3s;
     span{
       flex: 1;
     }
@@ -84,6 +95,7 @@
 
 #search-results > li:hover{
     background-color: var(--gray-1);
+    
 }
 
 #search-results > li > button{ 
