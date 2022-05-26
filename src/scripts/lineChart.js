@@ -2,19 +2,10 @@ import * as d3 from "d3";
 
 const parseDate = d3.timeParse("%Q");
 
-
-
-
-// const myTime2 = parseDate("1617667200000"); 
-// console.log(myTime2); // April 05, 2021
-// console.log(typeof myTime2);
-
 const width = 800; 
 const height = 400; 
 const margin = {top: 50, bottom: 50, left: 50, right: 50}; 
 const wrap = document.getElementById('chart-wrap');
-
-
 
 class lineChart{
     
@@ -24,7 +15,7 @@ class lineChart{
         this.dataGrabber = dataGrabber;
 
         this.dataGrabber.coinHistory(coin_id).then((res) => {
-          // console.log(`This is the data inside line Chart constructor: ${res.prices}`); 
+          
           this.buildChart(res.prices);
         }); 
     }
@@ -35,9 +26,7 @@ class lineChart{
           data = data.map((ele, idx) => {
             let eleDate = parseDate(`${ele[0]}`);
             let elePrice = Math.round(ele[1] * 100) / 100;
-            // console.log(elePrice); 
-            // console.log(typeof elePrice + ` and index is ${idx}`);   
-            // console.log(`eleDate is a ${typeof eleDate}`); 
+      
             return {
               date: eleDate, 
               price: elePrice 
@@ -83,7 +72,7 @@ class lineChart{
 
     renderChart(coin_id){
       this.dataGrabber.coinHistory(coin_id).then((res) => {
-        // console.log(`This is the data inside line Chart constructor: ${res.prices}`); 
+        
         this.buildChart(res.prices);
       }); 
     }

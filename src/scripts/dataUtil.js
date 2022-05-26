@@ -18,7 +18,7 @@ class DataUtil {
     return fetch(coins_list_endpoint)
       .then(response => response.json())
       .then(data => {
-        // console.log(data);
+        
         return data; 
       });
 
@@ -39,7 +39,7 @@ class DataUtil {
     return fetch(endpoint)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      
       return data;
       // ele.innerHTML = `The bitcoin symbol is: <img src='${data.image.thumb}' />`;
     });

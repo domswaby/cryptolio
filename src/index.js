@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     myPortfolio.barChart = myBarChart;
     
-    console.log(myPortfolio.portfolio);
-    
     // page load header transition animations
     let headerTitle = document.querySelector("#header > h1");
     headerTitle.classList.add('header-shown');
@@ -49,22 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if(!coinsList){
-      console.log("made it here"); 
+      
       dataGrabber.coinsList().then((data) => {
         coinsList = data;
         localStorage.setItem('coinsList', JSON.stringify(data));
-        console.log("Got coinsList from API");
+        
         displaySearchResults(coinsList.slice(0,10));  
       });  
     }else{
       coinsList = JSON.parse(localStorage.getItem('coinsList')); 
-      console.log("Got coinsList from localStorage");
+      
       displaySearchResults(coinsList.slice(0, 10));
     }
    
     let searchInput = document.querySelector("#search-input");
     searchInput.addEventListener("keyup", function (e) {
-      console.log("triggered keyup"); 
+      
       if(e.target.value === ''){
        resultList.innerHTML = ''; 
        return;
@@ -124,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeModal = document.querySelector('.close-modal-btn')
     
     openModal.addEventListener("click", () => {
-      console.log("made it to the listener")
       modalContainer.classList.add('show-modal')
     });
     

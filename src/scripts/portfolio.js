@@ -31,7 +31,6 @@ class Portfolio{
                 this.portfolio.push(coin);
                 localStorage.setItem("portfolio", JSON.stringify(this.portfolio));
                 this.updatePortList();
-                console.log(this.getPortfolio());
                 return res;
             });
         }else{
