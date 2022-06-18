@@ -58,15 +58,36 @@ class lineChart{
               .call(d3.axisLeft(y));
 
             // Add the line
-            svg.append("path")
+            const path = svg.append("path")
+              
               .datum(data)
-              .attr("fill", "none")
-              .attr("stroke", "var(--green-4)")
-              .attr("stroke-width", 4)
+              // .transition()
+              //  .ease(d3.easeLinear)
+              //  .duration(500)
+              //  .delay((d, i) => { return i})
+              // .attr("fill", "none")
+              // .attr("stroke", "var(--green-4)")
+              // .attr("stroke-width", 4)
               .attr("d", d3.line()
                 .x(function(d) { return x(d.date) })
                 .y(function(d) { return y(d.price) })
                 );
+                
+            const pathLength = path.node().getTotalLength();
+            const transitionPath = d3
+              .transition()
+              .ease(d3.easeSin)
+              .duration(2000);
+              
+            path
+              .attr("stroke-dashoffset", pathLength)
+              .attr("stroke-dasharray", pathLength)
+              .transition(transitionPath)
+              .attr("stroke-dashoffset", 0)
+              .attr("fill", "none")
+              .attr("stroke", "var(--green-4)")
+              .attr("stroke-width", 4);
+                
 
         }
 
