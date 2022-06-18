@@ -38,19 +38,23 @@ class barChart{
             .data(port.sort((a, b) => d3.descending(a.usd, b.usd)))
             .enter()
             .append('rect')
-                .attr('x', (d, i) => x(i))
-                .attr('y', (d) => y(d.usd))
-                .attr('height', d => y(0) - y(d.usd))
-                .attr('width', x.bandwidth())
+            .on('click', (ele) => {
+                this.myLineChart.renderChart(ele.target.id);
+                let id = ele.target.id; 
+                let lineChartTitle = id.slice(0,1).toUpperCase() + id.slice(1).toLowerCase(); 
+                document.querySelector("#price-chart-header > span").innerHTML = "- " + lineChartTitle;
+            })
                 .attr('class', 'bar') 
                 .attr('id', d => d.id)
-                .on('click', (ele) => {
-                    this.myLineChart.renderChart(ele.target.id);
-                    let id = ele.target.id; 
-                    let lineChartTitle = id.slice(0,1).toUpperCase() + id.slice(1).toLowerCase(); 
-                    document.querySelector("#price-chart-header > span").innerHTML = "- " + lineChartTitle;
-                })
-            .exit().remove();
+                .attr('x', (d, i) => x(i))
+                .attr('y', (d) => y(d.usd))
+                .attr('width', x.bandwidth())
+                .transition()
+                .ease(d3.easeLinear)
+                .duration(500)
+                .delay((d, i) => { return i})
+                .attr('height', d => y(0) - y(d.usd));
+               
 
         function xAxis(g){
             g.attr('transform', `translate(0, ${height - margin.bottom})`)
