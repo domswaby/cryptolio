@@ -76,12 +76,14 @@ class Portfolio{
         let dollarSpan;
         let input;
         let inputSpan; 
+        let inputBtn; 
         
         this.portfolio.forEach((ele) => {
             child = document.createElement('li');
             child2 = document.createElement('li');
             input = document.createElement('input'); 
             inputSpan = document.createElement('span'); 
+            inputBtn = document.createElement('button'); 
             
             button = document.createElement('button');
             
@@ -93,6 +95,8 @@ class Portfolio{
             
             button.classList.add('remove-button');
             dollarSpan.classList.add('dollar-number'); 
+            inputBtn.classList.add('port-input-btn'); 
+            
 
             button.innerHTML = 'remove';
             button.addEventListener("click", (e) => {
@@ -105,11 +109,18 @@ class Portfolio{
                     e.target.value = ''; 
                 }
             }); 
+            input.setAttribute("id", ele.name);
+            inputBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                let myInput = document.getElementById(ele.name);
+                this.updateCoinAmount(ele, myInput.value);
+            })
             image.src = ele.image.thumb; 
             nameSpan.innerHTML = ele.id;
             amountSpan.innerHTML = ele.amount;
             dollarSpan.innerHTML = `$${ele.usd}`;
             inputSpan.innerHTML = `Amount: `;
+            inputBtn.innerHTML = `CHANGE`;
             child2.setAttribute("id", 'amount-input');
 
             child.appendChild(imageWrap);
@@ -120,6 +131,7 @@ class Portfolio{
             child.appendChild(button);
             child2.appendChild(inputSpan);
             child2.appendChild(input);
+            child2.appendChild(inputBtn);
 
             list.appendChild(child);
             list.appendChild(child2);

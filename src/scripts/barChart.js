@@ -43,6 +43,9 @@ class barChart{
                 let id = ele.target.id; 
                 let lineChartTitle = id.slice(0,1).toUpperCase() + id.slice(1).toLowerCase(); 
                 document.querySelector("#price-chart-header > span").innerHTML = "- " + lineChartTitle;
+                let el = document.getElementById('price-chart-header');
+                el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+                
             })
                 .attr('class', 'bar') 
                 .attr('id', d => d.id)

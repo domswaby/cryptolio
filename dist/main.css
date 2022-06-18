@@ -70,8 +70,11 @@ button {
   --green-1: rgba(155, 224, 176, 1);
   --green-2: rgba(22, 219, 81, 1);
   --green-3: rgba(17, 168, 62, 1);
+  --green-3-2: rgba(17, 168, 62, 0.7);
   --green-4: rgba(12, 120, 44, 1);
   --green-5: rgba(35, 92, 52, 1);
+  --red-1: rgba(163, 15, 15, 0.8);
+  --red-2: rgba(245, 23, 23, 1);
   --white-1: rgba(242,242,242, 1);
   --gray-1: rgb(226, 222, 222);
   --gray-2: rgba(191,191,191, 1);
@@ -435,13 +438,13 @@ footer {
   padding: 10px;
 }
 #port-list li div {
-  flex: 0.5;
-}
-#port-list li span {
   flex: 1;
 }
+#port-list li span {
+  flex: 1.666666;
+}
 #port-list li button {
-  flex: 0.2;
+  flex: 1;
   cursor: pointer;
 }
 
@@ -451,12 +454,32 @@ footer {
 
 #port-list > #amount-input > input {
   flex: 1;
+  margin-right: 0.3rem;
 }
 
 #port-list > #amount-input > span {
   flex: 5;
   text-align: right;
   color: var(--gray-1);
+  margin-right: 0.3rem;
+}
+
+#port-list > #amount-input > button {
+  flex: 1;
+  text-align: center;
+  border-radius: 5px;
+  background-color: var(--gray-1);
+  letter-spacing: 2px;
+  transition: 0.3s;
+  height: 2rem;
+  padding: 0 10px;
+}
+
+#port-list > #amount-input > button:hover {
+  background-color: var(--green-3);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 3px;
 }
 
 .dollar-number {
@@ -465,20 +488,22 @@ footer {
 
 .remove-button {
   cursor: pointer;
-  padding: 10px;
   border-radius: 10px;
-  background: var(--gray-1);
+  background: var(--red-1);
   color: var(--black-1);
-  font-weight: 800;
-  font-size: 1.1em;
+  font-size: 1rem;
   transition: 1s;
+  letter-spacing: 1px;
   position: relative;
+  height: 2rem;
+  flex: 2;
   text-align: center;
 }
 
 .remove-button:hover {
   color: var(--white-1);
-  background-color: var(--black-1);
+  background-color: var(--red-2);
+  letter-spacing: 0;
 }
 
 .bar:hover {

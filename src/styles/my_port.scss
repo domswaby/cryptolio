@@ -19,14 +19,14 @@
     align-items: center;
     padding: 10px;
     div{
-        flex: 0.5;
+        flex: 1;
     }
     span{
-        flex: 1;
+        flex: 1.666666;
     }
     
     button{ 
-        flex: 0.2;
+        flex: 1;
         cursor: pointer;
     }
 }
@@ -36,13 +36,32 @@
 }
 #port-list > #amount-input > input{
     flex: 1;  
+    margin-right: 0.3rem;
 }
 
 #port-list > #amount-input > span {
     flex: 5;
     text-align: right;
     color: var(--gray-1);
+    margin-right: 0.3rem;
     
+}
+#port-list > #amount-input > button {
+    flex: 1;
+    text-align: center;
+    border-radius: 5px; 
+    background-color: var(--gray-1);
+    letter-spacing: 2px;
+    transition: 0.3s;
+    height: 2rem;
+    padding: 0 10px;
+    
+}
+#port-list>#amount-input>button:hover {
+    background-color: var(--green-3);
+    color: white; 
+    font-weight: 600;
+    letter-spacing: 3px;
 }
 
 .dollar-number{
@@ -51,18 +70,22 @@
 
 .remove-button{
     cursor: pointer; 
-    padding: 10px; 
     border-radius: 10px;
-    background: var(--gray-1);
+    background: var(--red-1);
     color: var(--black-1);
-    font-weight: 800;
-    font-size: 1.1em;
+    font-size: 1rem;
     transition: 1s;
+    letter-spacing: 1px;
     position: relative; 
-    
+    height: 2rem;
+    flex: 2;
     text-align: center;
+    
 }
 .remove-button:hover{
     color: var(--white-1);
-    background-color: var(--black-1);
+    background-color: var(--red-2);
+    letter-spacing: 0;
 }
+
+
