@@ -61,17 +61,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
    
     let searchInput = document.querySelector("#search-input");
+
     searchInput.addEventListener("keyup", function (e) {
-      
+        debounceFilterSearchResults(e);
+    }); 
+
+    const debounceFilterSearchResults = debounce((e) => {
+       filterSearchResults(e);
+    })
+    
+    const filterSearchResults = (e) => {
+
       if(e.target.value === ''){
        resultList.innerHTML = ''; 
        return;
       }
-      
-      filterSearchResults();
-    }); 
-    
-    const filterSearchResults = () => {
       
       let results = [];
       let value = searchInput.value.toLowerCase(); 
@@ -85,6 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       displaySearchResults(results);
     };
+
+    function debounce(cb, delay = 1000) {
+      let timeout
+
+      return (...args) => {
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
+          cb(...args)
+        }, delay)
+      }
+    }
 
     // footer
     let footer = document.querySelector("footer");
