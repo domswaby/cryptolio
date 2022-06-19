@@ -23,6 +23,7 @@
     }
     span{
         flex: 1.666666;
+        font-size: 1.2rem;
     }
     
     button{ 
@@ -70,7 +71,7 @@
 
 .remove-button{
     cursor: pointer; 
-    border-radius: 10px;
+    border-radius: 5px;
     background: var(--red-1);
     color: var(--black-1);
     font-size: 1rem;
@@ -80,12 +81,14 @@
     height: 2rem;
     flex: 2;
     text-align: center;
+    box-sizing: border-box;
     
 }
 .remove-button:hover{
     color: var(--white-1);
     background-color: var(--red-2);
-    letter-spacing: 0;
+    letter-spacing: 5px;
+    font-size: 1.1rem;
 }
 
 

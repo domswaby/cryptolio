@@ -442,6 +442,7 @@ footer {
 }
 #port-list li span {
   flex: 1.666666;
+  font-size: 1.2rem;
 }
 #port-list li button {
   flex: 1;
@@ -488,7 +489,7 @@ footer {
 
 .remove-button {
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
   background: var(--red-1);
   color: var(--black-1);
   font-size: 1rem;
@@ -498,12 +499,14 @@ footer {
   height: 2rem;
   flex: 2;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .remove-button:hover {
   color: var(--white-1);
   background-color: var(--red-2);
-  letter-spacing: 0;
+  letter-spacing: 5px;
+  font-size: 1.1rem;
 }
 
 .bar:hover {
@@ -515,6 +518,14 @@ footer {
 
 #port-pie-wrap {
   margin-bottom: 2em;
+}
+
+.x-axis-text {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--green-3);
+  transform: rotate(-30deg);
 }
 
 #price-chart-header > span {

@@ -62,13 +62,11 @@ class barChart{
         function xAxis(g){
             g.attr('transform', `translate(0, ${height - margin.bottom})`)
                 .call(d3.axisBottom(x).tickFormat(i => port[i].id))
-                .attr('font-size', '1.2em')
                 .selectAll("text")
                 .style("text-anchor", "end")
+                .attr('class', 'x-axis-text')
                 .attr("dx", "-.4em")
                 .attr("dy", ".15em")
-                .attr("transform", "rotate(-30)")
-                .attr("color", "var(--green-3)");     
         }
 
         function yAxis(g){
