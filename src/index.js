@@ -3,9 +3,10 @@ import Portfolio from './scripts/portfolio.js';
 import barChart from './scripts/barChart.js';
 import lineChart from './scripts/lineChart.js';
 import {sidebarListeners} from './scripts/sidebar.js'; 
-import {instructionsModal} from './scripts/instructionsModal.js'
-import {footer} from './scripts/footer.js'
-import {header} from './scripts/header.js'
+import {instructionsModal} from './scripts/instructionsModal.js';
+import {footer} from './scripts/footer.js';
+import {header} from './scripts/header.js';
+import {searchModule} from './scripts/search.js'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", (e) => {
             myPortfolio.addCoin(result).then((res) => {
               myBarChart.reRenderChart();
+              let searchInput = document.querySelector("#search-input");
               searchInput.value = ""; 
               displaySearchResults([]); // make search results disappear after clicking add coin button
             }); 
@@ -48,63 +50,18 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if(!coinsList){
-      
       dataGrabber.coinsList().then((data) => {
         coinsList = data;
         localStorage.setItem('coinsList', JSON.stringify(data));
-        
         displaySearchResults(coinsList.slice(0,10));  
       });  
     }else{
       coinsList = JSON.parse(localStorage.getItem('coinsList')); 
-      
       displaySearchResults(coinsList.slice(0, 10));
     }
+
+    searchModule(resultList, coinsList, displaySearchResults); 
    
-    let searchInput = document.querySelector("#search-input");
-
-    searchInput.addEventListener("keyup", function (e) {
-        debounceFilterSearchResults(e);
-    }); 
-
-    const debounceFilterSearchResults = debounce((e) => {
-       filterSearchResults(e);
-    })
-    
-    const filterSearchResults = (e) => {
-
-      if(e.target.value === ''){
-       resultList.innerHTML = ''; 
-       return;
-      }
-      
-      let results = [];
-      let value = searchInput.value.toLowerCase(); 
-   
-      for(let item of coinsList){
-        if(results.length > 49) break;
-        // debugger;
-        if(item.name.toLowerCase().includes(value.toLowerCase()) || item.symbol.toLowerCase().includes(value.toLowerCase())){
-          results.push(item);
-        }
-      }
-
-      displaySearchResults(results);
-    };
-
-    function debounce(cb, delay = 1000) {
-      let timeout
-
-      return (...args) => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-          cb(...args)
-        }, delay)
-      }
-    }
-
-    
-
 }); 
 
 
