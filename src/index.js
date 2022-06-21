@@ -2,6 +2,10 @@ import dataUtils from './scripts/dataUtil.js';
 import Portfolio from './scripts/portfolio.js';
 import barChart from './scripts/barChart.js';
 import lineChart from './scripts/lineChart.js';
+import {sidebarListeners} from './scripts/sidebar.js'; 
+import {instructionsModal} from './scripts/instructionsModal.js'
+import {footer} from './scripts/footer.js'
+import {header} from './scripts/header.js'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,15 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let myPortfolio = new Portfolio();
     let myLineChart = new lineChart(dataGrabber, "bitcoin"); 
     let myBarChart = new barChart(myLineChart);
-
+    sidebarListeners();
+    instructionsModal();
+    header();
+    footer();
     myPortfolio.barChart = myBarChart;
     
-    // page load header transition animations
-    let headerTitle = document.querySelector("#header > h1");
-    headerTitle.classList.add('header-shown');
-    let headerImage = document.querySelector("#cyberfrog");
-    headerImage.classList.add('moved');
-
     let coinsList = localStorage.getItem('coinsList');   
     let resultList = document.querySelector("#search-results");
     
@@ -82,7 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
    
       for(let item of coinsList){
         if(results.length > 49) break;
-        if(item.symbol.toLowerCase().includes(value.toLowerCase()) || item.name.toLowerCase().includes(value.toLowerCase())){
+        // debugger;
+        if(item.name.toLowerCase().includes(value.toLowerCase()) || item.symbol.toLowerCase().includes(value.toLowerCase())){
           results.push(item);
         }
       }
@@ -101,48 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // footer
-    let footer = document.querySelector("footer");
-    let date = new Date();
-    let year = date.getFullYear();
-    footer.innerHTML = `All rights reserved ©${year}`; 
-
-    // scroller 
-
-    let addCoinLink = document.getElementById('add-coin-link');
-    addCoinLink.addEventListener("click", () => {
-      let ele = document.getElementById('add-coin-header');
-      ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }); 
-    let tableLink = document.getElementById('table-link');
-    tableLink.addEventListener("click", () => {
-      let ele = document.getElementById('port-header');
-      ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }); 
-    let portPieLink = document.getElementById('port-pie-link');
-    portPieLink.addEventListener("click", () => {
-      let ele = document.getElementById('port-pie-header');
-      ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }); 
-    let priceChartLink = document.getElementById('price-chart-link');
-    priceChartLink.addEventListener("click", () => {
-      let ele = document.getElementById('price-chart-header');
-      ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }); 
-
-    // question modal
-
-    const openModal = document.querySelector('.open-modal-btn')
-    const modalContainer = document.querySelector('.modal-container')
-    const closeModal = document.querySelector('.close-modal-btn')
     
-    openModal.addEventListener("click", () => {
-      modalContainer.classList.add('show-modal')
-    });
-    
-    closeModal.addEventListener("click", () => {
-      modalContainer.classList.remove('show-modal')
-    });
+
 }); 
 
 
