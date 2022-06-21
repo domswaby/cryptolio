@@ -291,6 +291,9 @@ footer {
 #search-wrap > label {
   border-bottom: 2px solid var(--gray-2);
   padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: var(--gray-1);
   text-align: center;
   letter-spacing: 2px;
