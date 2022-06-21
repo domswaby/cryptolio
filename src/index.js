@@ -6,8 +6,8 @@ import {sidebarListeners} from './scripts/sidebar.js';
 import {instructionsModal} from './scripts/instructionsModal.js';
 import {footer} from './scripts/footer.js';
 import {header} from './scripts/header.js';
-import {searchModule} from './scripts/search.js'
-
+import {searchModule} from './scripts/search.js';
+import {displaySearchResults} from './scripts/displaySearch.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -24,43 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
     let coinsList = localStorage.getItem('coinsList');   
     let resultList = document.querySelector("#search-results");
     
-    const displaySearchResults = function (results) {
-      resultList.innerHTML = ''; 
-      results.forEach(function (result) {
-        let child = document.createElement('li')
-        let button = document.createElement('button')
-        let span = document.createElement('span')
-                
-        resultList.appendChild(child);
-        span.innerHTML = result.name;
-        button.innerHTML = "add coin";
-        child.appendChild(span);
-        child.appendChild(button);
-
-        button.addEventListener("click", (e) => {
-            myPortfolio.addCoin(result).then((res) => {
-              myBarChart.reRenderChart();
-              let searchInput = document.querySelector("#search-input");
-              searchInput.value = ""; 
-              displaySearchResults([]); // make search results disappear after clicking add coin button
-            }); 
-
-        });
-      });
-    };
-
     if(!coinsList){
       dataGrabber.coinsList().then((data) => {
         coinsList = data;
         localStorage.setItem('coinsList', JSON.stringify(data));
-        displaySearchResults(coinsList.slice(0,10));  
+        displaySearchResults(coinsList.slice(0,10), resultList, myPortfolio, myBarChart);  
       });  
     }else{
       coinsList = JSON.parse(localStorage.getItem('coinsList')); 
-      displaySearchResults(coinsList.slice(0, 10));
+      displaySearchResults(coinsList.slice(0,10), resultList, myPortfolio, myBarChart);  
     }
 
-    searchModule(resultList, coinsList, displaySearchResults); 
+    searchModule(resultList, coinsList, displaySearchResults, myPortfolio, myBarChart); 
    
 }); 
 

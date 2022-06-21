@@ -1,5 +1,5 @@
-
-export const searchModule = (resultList, coinsList, displaySearchResults) => {
+import {debounce} from './debounce.js'
+export const searchModule = (resultList, coinsList, displaySearchResults, myPortfolio, myBarChart) => {
     
     let searchInput = document.querySelector("#search-input");
     
@@ -29,18 +29,7 @@ export const searchModule = (resultList, coinsList, displaySearchResults) => {
         }
       }
     
-      displaySearchResults(results);
+      displaySearchResults(results, resultList, myPortfolio, myBarChart);
     };
     
-    function debounce(cb, delay = 1000) {
-      let timeout
-    
-      return (...args) => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-          cb(...args)
-        }, delay)
-      }
-    }
-
 }
